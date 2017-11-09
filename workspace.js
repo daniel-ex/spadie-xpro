@@ -1307,9 +1307,9 @@ cpdefine("inline:com-chilipeppr-workspace-grbl-danielwk", ["chilipeppr_ready"], 
 
                             spc.onRecvLine = newOnRecvLine;
                             spc.jsonOnQueue = newJsonOnQueue;
-
-                            spc.init(true, /^ok|^\n/);
-
+                            spc.init(true, /^ok|^\n|^\[G|^</);
+                            //spc.init(true, /^ok|^\n/);
+        
                             // resize this console on a browser resize
                             $(window).on('resize', function(evt) {
                                 //console.log("serial-port-console. resize evt:", evt);
