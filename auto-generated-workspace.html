@@ -229,9 +229,9 @@ cpdefine("inline:com-chilipeppr-workspace-grbl-danielwk", ["chilipeppr_ready"], 
         name: "Workspace / grbl", // The descriptive name of your widget.
         desc: `A ChiliPeppr Workspace grbl for xpro.`,
         url: "http://raw.githubusercontent.com/daniel-ex/spadie-xpro/master/auto-generated-workspace.html", // The final URL of the working widget as a single HTML file with CSS and Javascript inlined. You can let runme.js auto fill this if you are using Cloud9.
-        fiddleurl: "http://ide.c9.io/danielwk/xpadie-xpro", // The edit URL. This can be auto-filled by runme.js in Cloud9 if you'd like, or just define it on your own to help people know where they can edit/fork your widget
+        fiddleurl: "http://ide.c9.io/danielwk/spadie-danielwk1", // The edit URL. This can be auto-filled by runme.js in Cloud9 if you'd like, or just define it on your own to help people know where they can edit/fork your widget
         githuburl: "http://github.com/daniel-ex/spadie-xpro", // The backing github repo
-        testurl: "http://xpadie-xpro-danielwk.c9users.io/workspace.html", // The standalone working widget so can view it working by itself
+        testurl: "http://spadie-danielwk1-danielwk.c9users.io/workspace.html", // The standalone working widget so can view it working by itself
         /**
          * Contains reference to the Console widget object. Hang onto the reference
          * so we can resize it when the window resizes because we want it to manually
@@ -1481,9 +1481,9 @@ cpdefine("inline:com-chilipeppr-workspace-grbl-danielwk", ["chilipeppr_ready"], 
 
                             spc.onRecvLine = newOnRecvLine;
                             spc.jsonOnQueue = newJsonOnQueue;
-
-                            spc.init(true, /^ok|^\n/);
-
+                            spc.init(true, /^ok|^\n|^\[G|^</);
+                            //spc.init(true, /^ok|^\n/);
+        
                             // resize this console on a browser resize
                             $(window).on('resize', function(evt) {
                                 //console.log("serial-port-console. resize evt:", evt);
